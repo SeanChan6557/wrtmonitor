@@ -188,7 +188,13 @@ int AppDetect::startMainAppRunning(int projectId,int curPid)
 		MY_LOGI("app has started,curPid === %d\n",curPid);
 		return curPid;
 	}
+	int cloudServicePid = getPidByCmdline(CLOUD_SERVICE_NAME);
+	if(cloudServicePid > 0){
+		kill(cloudServicePid,SIGKILL);
+		MY_LOGI("cloudServicePid alive,should kill it ,pid === %d\n",cloudServicePid);
 
+	}
+	
 	int reStartPid = getMainAppPid(projectId);
 	MY_LOGI("[%s-%d]%s reStartPid === %d\n", __FILE__, __LINE__,__FUNCTION__,reStartPid);
 

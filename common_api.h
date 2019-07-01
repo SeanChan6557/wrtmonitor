@@ -70,6 +70,7 @@ typedef enum{
 #define MAX_APP_INSTALLING_CHECK_TIMES   (60)
 #define SYSTEMUI_CHECK_COUNTS        (200)    //10 minutes
 
+#define CLOUD_SERVICE_NAME          "com.wrtsz.intercom.master:cloudtalkservice"
 
 typedef enum {
 	E_REBOOT,
